@@ -8,6 +8,7 @@ import AscensionGrid from "@/components/AscensionGrid";
 import VisualInterlude from "@/components/VisualInterlude";
 import HankoSeal from "@/components/HankoSeal";
 import CyclesGallery from "@/components/CyclesGallery";
+import SectionExhale from "@/components/SectionExhale";
 
 
 export default function Home() {
@@ -19,18 +20,28 @@ export default function Home() {
       <AscensionGrid>
         <Hero />
 
+        <SectionExhale figure="§ I" />
+
         <ArchitectureOfLegacy />
+
+        <SectionExhale figure="§ II" />
 
         <VisualInterlude />
 
+        <SectionExhale figure="§ III" />
+
         <WorksIndex />
 
+        <SectionExhale figure="§ IV" />
+
         <CyclesGallery />
+
+        <SectionExhale figure="§ V" />
 
         <LegacyOrigin />
       </AscensionGrid>
 
-      {/* Footer - Aligned (Col 2 start) */}
+      {/* Footer */}
       <footer className="py-2 border-t border-ink/5 mt-0">
         <HankoSeal />
         <div className="w-full max-w-[1920px] mx-auto px-6 md:px-12 grid grid-cols-4 md:grid-cols-12 gap-x-4 md:gap-x-6 py-4">

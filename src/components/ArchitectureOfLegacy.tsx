@@ -28,7 +28,7 @@ export default function ArchitectureOfLegacy() {
                 </BlurReveal>
 
                 <BlurReveal delay={0.2} duration={1.5}>
-                    <p className="font-garamond italic text-2xl md:text-3xl leading-relaxed text-ink/90">
+                    <p className="font-garamond italic text-3xl md:text-5xl leading-snug text-ink/90">
                         "We are losing the signal. The inheritors of the Prophets speak, but their voices are buried in static."
                     </p>
                 </BlurReveal>
@@ -49,7 +49,7 @@ export default function ArchitectureOfLegacy() {
                 </BlurReveal>
 
                 <BlurReveal delay={0.2} duration={1.5}>
-                    <p className="font-garamond italic text-2xl md:text-3xl leading-relaxed text-ink/90">
+                    <p className="font-garamond italic text-3xl md:text-5xl leading-snug text-ink/90">
                         "Ihsan is not a luxury. It is a debt."
                     </p>
                 </BlurReveal>
@@ -75,7 +75,7 @@ export default function ArchitectureOfLegacy() {
                 </BlurReveal>
 
                 <BlurReveal delay={0.2} duration={1.5}>
-                    <div className="font-garamond italic text-2xl md:text-3xl leading-relaxed text-ink/90">
+                    <div className="font-garamond italic text-3xl md:text-5xl leading-snug text-ink/90">
                         <p className="mb-4">This house was built on the realization of time.</p>
                     </div>
                 </BlurReveal>

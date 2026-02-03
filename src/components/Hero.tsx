@@ -8,9 +8,9 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-ink mt-4 md:mt-0"
+            className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-ink"
         >
-            {/* The Living Ink (Video) */}
+            {/* The Living Ink (Video) - Now pure texture */}
             <div className="absolute inset-0 z-0">
                 <video
                     src="https://ik.imagekit.io/dzmabcda0/The_frame_the_1080p_202602040231.mp4?updatedAt=1770143546116"
@@ -20,34 +20,72 @@ export default function Hero() {
                     playsInline
                     preload="auto"
                     onCanPlay={() => setIsVideoLoaded(true)}
-                    className={`w-full h-full object-cover mix-blend-overlay scale-[1.15] transition-opacity duration-1000 ${isVideoLoaded ? "opacity-50" : "opacity-0"
+                    className={`w-full h-full object-cover mix-blend-overlay scale-[1.15] transition-opacity duration-[3000ms] ${isVideoLoaded ? "opacity-[0.08]" : "opacity-0"
                         }`}
                 />
-                {/* Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-ink/20" />
             </div>
 
-            {/* The Statement - Route A (Cinematic Void) */}
-            <div className="relative z-10 text-paper mix-blend-difference px-4">
+            {/* The Massive Watermark - Commanding Presence */}
+            <div className="relative z-10 text-paper mix-blend-difference select-none pointer-events-none">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 2, ease: "easeOut" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 4, ease: "easeOut" }}
+                    className="flex flex-col items-center"
                 >
-                    <h1 className="font-garamond italic text-sm md:text-base tracking-[0.3em] leading-none text-center select-none text-paper/90 mix-blend-difference">
-                        UMR STUDIOS
+                    {/* The Mark */}
+                    <h1
+                        className="font-garamond font-light tracking-[0.1em] leading-[0.85] text-center"
+                        style={{ fontSize: 'clamp(80px, 25vw, 400px)' }}
+                    >
+                        UMR
                     </h1>
+
+                    {/* The Whisper */}
+                    <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.4 }}
+                        transition={{ duration: 2, delay: 2, ease: "easeOut" }}
+                        className="font-mono text-[10px] md:text-xs tracking-[0.5em] uppercase mt-8"
+                    >
+                        STUDIOS
+                    </motion.span>
                 </motion.div>
             </div>
 
-            {/* Anchors */}
-            <div className="absolute top-6 left-6 font-mono text-[10px] opacity-30 text-paper hidden md:block">
-                EST. 2026 — MANCHESTER
-            </div>
+            {/* The Scroll Indicator - Delayed Invitation */}
+            <motion.div
+                className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.3 }}
+                transition={{ duration: 2, delay: 4, ease: "easeOut" }}
+            >
+                <motion.div
+                    className="w-[1px] bg-paper"
+                    initial={{ height: 0 }}
+                    animate={{ height: 60 }}
+                    transition={{ duration: 2, delay: 4.5, ease: "easeOut" }}
+                />
+            </motion.div>
 
-            <div className="absolute bottom-12 right-6 md:right-12 font-mono text-[10px] tracking-widest uppercase writing-vertical-rl rotate-180 opacity-60 text-paper">
-                The War For The Soul
-            </div>
+            {/* Corner Anchors */}
+            <motion.div
+                className="absolute top-8 left-8 font-mono text-[9px] opacity-0 text-paper hidden md:block"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.2 }}
+                transition={{ duration: 2, delay: 3 }}
+            >
+                EST. 2026
+            </motion.div>
+
+            <motion.div
+                className="absolute top-8 right-8 font-mono text-[9px] text-paper hidden md:block"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.2 }}
+                transition={{ duration: 2, delay: 3.2 }}
+            >
+                MANCHESTER
+            </motion.div>
         </section>
     );
 }

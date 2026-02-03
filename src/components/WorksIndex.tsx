@@ -1,72 +1,119 @@
 "use client";
 import { motion } from "framer-motion";
+import BlurReveal from "./BlurReveal";
 
 const works = [
-    { id: "01", category: "THE CYCLES", date: "Recurring / Multi-Scholar", desc: "Ramadan quality. Every moon. A monthly curriculum from the inheritors." },
-    { id: "02", category: "THE PRESERVATION", date: "Recitation / Audio-Visual", desc: "The Uncreated Word. In High Fidelity. Recitation captured with Ihsan." },
-    { id: "03", category: "THE BRIDGE", date: "Documentary / On Location", desc: "Mauritania. Fez. Bradford. Breaking the distance between the seeker and the scholar." },
-    { id: "04", category: "THE REMINDER", date: "Poetry & Reflection", desc: "Art as a Weapon. The war for the soul is fought through the eye." },
+    {
+        numeral: "I",
+        title: "THE CYCLES",
+        subtitle: "On the preservation of knowledge through repetition and ritual.",
+        meta: "Recurring / Multi-Scholar"
+    },
+    {
+        numeral: "II",
+        title: "THE PRESERVATION",
+        subtitle: "The Uncreated Word. In High Fidelity. Recitation captured with Ihsan.",
+        meta: "Recitation / Audio-Visual"
+    },
+    {
+        numeral: "III",
+        title: "THE BRIDGE",
+        subtitle: "Mauritania. Fez. Bradford. Breaking the distance between the seeker and the scholar.",
+        meta: "Documentary / On Location"
+    },
+    {
+        numeral: "IV",
+        title: "THE REMINDER",
+        subtitle: "Art as a Weapon. The war for the soul is fought through the eye.",
+        meta: "Poetry & Reflection"
+    },
 ];
 
 export default function WorksIndex() {
     return (
-        <section id="works" className="min-h-screen py-32 w-full">
-            <div className="border-b border-ink/10 pb-4 mb-8 flex justify-between items-end">
-                <h2 className="font-mono text-[10px] tracking-widest uppercase">Index of Works</h2>
-                <span className="font-mono text-[10px] opacity-40">2026 — PRESENT</span>
-            </div>
+        <section id="works" className="py-32 md:py-48 w-full">
+            {/* Section Header */}
+            <BlurReveal>
+                <div className="border-b border-ink/10 pb-6 mb-16 flex justify-between items-end">
+                    <span className="font-mono text-[9px] tracking-[0.3em] uppercase opacity-40">Index of Works</span>
+                    <span className="font-mono text-[9px] opacity-20">2026 — Present</span>
+                </div>
+            </BlurReveal>
 
-            <div className="flex flex-col">
-                {works.map((item) => (
-                    <WorkItem key={item.id} item={item} />
+            {/* The Folio Entries */}
+            <div className="flex flex-col gap-20 md:gap-32">
+                {works.map((item, index) => (
+                    <FolioEntry key={item.numeral} item={item} index={index} />
                 ))}
             </div>
         </section>
     );
 }
 
-function WorkItem({ item }: { item: { id: string; category: string; date: string; desc: string } }) {
+function FolioEntry({ item, index }: { item: typeof works[0]; index: number }) {
     return (
-        <motion.div
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-            className="group relative grid grid-cols-1 md:grid-cols-12 py-8 border-b border-ink/5 cursor-pointer hover:bg-stone/5 transition-colors"
-        >
-            {/* ID (Col 1-2) */}
-            <div className="col-span-1 md:col-span-2 flex items-start">
-                <span className="font-mono text-[10px] opacity-40 group-hover:opacity-100 transition-opacity">/{item.id}</span>
-            </div>
+        <BlurReveal delay={index * 0.1}>
+            <motion.div
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+                className="group relative grid grid-cols-12 gap-4 cursor-pointer"
+            >
+                {/* Roman Numeral - Left Margin */}
+                <div className="col-span-2 md:col-span-1">
+                    <span className="font-garamond italic text-2xl md:text-3xl text-ink/30 group-hover:text-oxblood/60 transition-colors duration-500">
+                        {item.numeral}.
+                    </span>
+                </div>
 
-            {/* Main Title (Col 3-8) */}
-            <div className="col-span-1 md:col-span-6 overflow-hidden">
-                <motion.h3
-                    variants={{
-                        rest: { x: 0, opacity: 0.8 },
-                        hover: { x: 10, opacity: 1, fontStyle: "italic" }
-                    }}
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-display text-3xl md:text-5xl text-ink leading-tight"
-                >
-                    {item.category}
-                </motion.h3>
-                <motion.p
-                    variants={{
-                        rest: { height: 0, opacity: 0 },
-                        hover: { height: "auto", opacity: 0.6 }
-                    }}
-                    className="font-display text-sm mt-2 overflow-hidden"
-                >
-                    {item.desc}
-                </motion.p>
-            </div>
+                {/* Main Content */}
+                <div className="col-span-10 md:col-span-8">
+                    <motion.h3
+                        variants={{
+                            rest: { x: 0 },
+                            hover: { x: 12 }
+                        }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        className="font-display text-2xl md:text-4xl tracking-[0.1em] text-ink/90 group-hover:text-ink transition-colors"
+                    >
+                        {item.title}
+                    </motion.h3>
 
-            {/* Meta (Col 9-12) */}
-            <div className="hidden md:flex col-span-4 justify-end items-start group-hover:pr-4 transition-all duration-500">
-                <span className="font-mono text-[9px] tracking-widest uppercase opacity-40 group-hover:opacity-100 transition-opacity">
-                    {item.date}
-                </span>
-            </div>
-        </motion.div>
+                    <motion.p
+                        variants={{
+                            rest: { opacity: 0.5, y: 0 },
+                            hover: { opacity: 0.8, y: 4 }
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className="font-garamond italic text-base md:text-lg mt-3 max-w-lg leading-relaxed"
+                    >
+                        {item.subtitle}
+                    </motion.p>
+                </div>
+
+                {/* Meta - Right Aligned */}
+                <div className="hidden md:flex col-span-3 justify-end items-start pt-2">
+                    <motion.span
+                        variants={{
+                            rest: { opacity: 0.2 },
+                            hover: { opacity: 0.6 }
+                        }}
+                        className="font-mono text-[8px] tracking-[0.2em] uppercase text-right"
+                    >
+                        {item.meta}
+                    </motion.span>
+                </div>
+
+                {/* The Hover Line */}
+                <motion.div
+                    className="absolute -bottom-4 left-0 h-[1px] bg-ink/10"
+                    variants={{
+                        rest: { width: "0%" },
+                        hover: { width: "100%" }
+                    }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                />
+            </motion.div>
+        </BlurReveal>
     );
 }
