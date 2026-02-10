@@ -5,10 +5,12 @@
   --color-ink: #1A1A1A;
   --color-stone: #8C8C8C;
   --color-void: #0F0F0F;
+  --color-oxblood: #6E0D25;
 
   --font-display: var(--font-playfair-display), serif;
   --font-mono: var(--font-geist-mono), monospace;
   --font-kanji: var(--font-noto-serif-jp), serif;
+  --font-garamond: var(--font-garamond), serif;
 }
 
 :root {

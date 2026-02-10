@@ -31,8 +31,8 @@ const notoSerifJP = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  title: "MR Studios | The Ink of the Scholar",
-  description: "Preservation & Legacy. Japanese Zen x French Cinema.",
+  title: "UMR Studios | Islamic Media Production for the Ummah",
+  description: "UMR Studios is the leading Islamic media production studio for dawah — creating documentaries, podcasts, lectures, and films that elevate the voices of scholars and bring authentic knowledge to the global Muslim community.",
 };
 
 export default function RootLayout({

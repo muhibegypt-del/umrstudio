@@ -40,9 +40,9 @@ export default function CyclesGallery() {
     ];
 
     return (
-        <section className="w-full py-32 border-t border-ink/5">
+        <section className="w-full py-16 border-t border-ink/5">
             {/* Header / Context */}
-            <div className="mb-12 flex justify-between items-end px-1">
+            <div className="mb-8 flex justify-between items-end px-1">
                 <span className="font-mono text-[9px] uppercase tracking-widest opacity-40">
                     Series Index
                 </span>

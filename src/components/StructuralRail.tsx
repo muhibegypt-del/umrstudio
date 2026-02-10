@@ -2,7 +2,7 @@
 
 export default function StructuralRail() {
     return (
-        <div className="fixed left-0 top-0 h-full w-[80px] md:w-[100px] z-50 flex flex-col items-center pointer-events-none">
+        <div className="fixed left-0 top-0 h-full w-[80px] md:w-[100px] z-50 hidden md:flex flex-col items-center pointer-events-none">
             {/* The Line */}
             <div className="absolute right-0 top-0 h-full w-[1px] bg-ink/10" />
 

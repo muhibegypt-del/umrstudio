@@ -12,16 +12,16 @@ interface BlurRevealProps {
 export default function BlurReveal({
     children,
     delay = 0,
-    duration = 1,
+    duration = 0.6,
     className = ""
 }: BlurRevealProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-10% 0px -10% 0px" });
+    const isInView = useInView(ref, { once: true, margin: "-5% 0px -5% 0px" });
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+            initial={{ opacity: 0, filter: "blur(5px)", y: 6 }}
             animate={isInView ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
             transition={{
                 duration: duration,

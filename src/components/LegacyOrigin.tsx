@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion"; // For potential future animations
 import BlurReveal from "./BlurReveal";
+import Image from "next/image";
 
 export default function LegacyOrigin() {
     return (
-        <section id="legacy" className="min-h-[60vh] flex items-center justify-center py-24">
+        <section id="legacy" className="flex items-center justify-center py-16">
             <div className="w-full max-w-[90%] md:max-w-6xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
 
                 {/* 1. The Evidence (Image) - Occupies middle-left (Cols 2-5) */}
@@ -17,10 +18,12 @@ export default function LegacyOrigin() {
                         viewport={{ once: true }}
                         className="w-full h-full relative"
                     >
-                        <img
+                        <Image
                             src="/images/student-with-lawh.jpg"
                             alt="The Student"
-                            className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-100 mix-blend-multiply"
+                            fill
+                            sizes="(max-width: 768px) 90vw, 33vw"
+                            className="object-cover grayscale contrast-125 opacity-100 mix-blend-multiply"
                         />
                         <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
                     </motion.div>
@@ -39,12 +42,12 @@ export default function LegacyOrigin() {
                 <div className="md:col-start-7 md:col-span-4 flex flex-col justify-center mt-12 md:mt-24">
                     <BlurReveal delay={0.2} duration={1.2}>
                         <span className="font-mono text-[9px] uppercase tracking-widest text-oxblood mb-6 block">
-                            The Realization
+                            Why Now
                         </span>
                     </BlurReveal>
 
                     <BlurReveal delay={0.4} duration={1.2}>
-                        <h2 className="font-serif text-2xl md:text-3xl leading-relaxed italic text-ink/90 mb-12">
+                        <h2 className="font-serif text-2xl md:text-3xl leading-relaxed italic text-ink/90 mb-10">
                             "Time is short. After the passing of my brother Latif, I realized the weight of the clock. This studio is not a business; it is a legacy project."
                         </h2>
                     </BlurReveal>
@@ -52,11 +55,18 @@ export default function LegacyOrigin() {
                     <div className="flex flex-col gap-4 border-l border-ink/20 pl-6">
                         <BlurReveal delay={0.6} duration={1.2}>
                             <p className="font-display text-sm md:text-base leading-loose opacity-70 max-w-sm">
-                                A vessel to leave behind good work for generations to come. It is an archive of silence in a noisy world.
+                                A vessel to leave behind good work for generations to come. Without platforms like this, the scholarship and wisdom our ummah needs may not reach the people who need it most.
                             </p>
                         </BlurReveal>
-                        <BlurReveal delay={0.8} duration={1.2} className="mt-8">
-                            <span className="font-display text-lg italic">
+
+                        <BlurReveal delay={0.7} duration={1.2}>
+                            <p className="font-display text-sm md:text-base leading-loose opacity-70 max-w-sm mt-2">
+                                We don't have the luxury of waiting.
+                            </p>
+                        </BlurReveal>
+
+                        <BlurReveal delay={0.8} duration={1.2} className="mt-6">
+                            <span className="font-display text-lg italic block">
                                 — UMR
                             </span>
                         </BlurReveal>

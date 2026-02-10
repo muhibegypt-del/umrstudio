@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function VisualInterlude() {
     return (
-        <section className="relative w-full py-32 flex flex-col gap-12">
+        <section className="relative w-full py-16 flex flex-col gap-8">
             {/* Section Label */}
             <div className="w-full flex justify-between items-end border-b border-ink/10 pb-4 px-1">
                 <span className="font-mono text-[9px] tracking-widest uppercase opacity-40">
@@ -27,6 +27,7 @@ export default function VisualInterlude() {
                     src="/images/zen-garden.jpg"
                     alt="Zen Garden Texture"
                     fill
+                    sizes="100vw"
                     className="object-cover hover:scale-[1.02] transition-transform duration-[3s] ease-out"
                 />
                 {/* Grain Overlay specific to image */}
@@ -52,6 +53,7 @@ export default function VisualInterlude() {
                         src="/images/wooden-tablets-collection.jpg"
                         alt="Wooden Tablets"
                         fill
+                        sizes="(max-width: 768px) 50vw, 20vw"
                         className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                     />
                     <span className="absolute bottom-2 left-2 font-mono text-[8px] uppercase tracking-widest text-paper mix-blend-difference opacity-60">
@@ -65,6 +67,7 @@ export default function VisualInterlude() {
                         src="/images/prayer-beads-hands.jpg"
                         alt="Prayer Beads"
                         fill
+                        sizes="(max-width: 768px) 50vw, 20vw"
                         className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                     />
                     <span className="absolute bottom-2 left-2 font-mono text-[8px] uppercase tracking-widest text-paper mix-blend-difference opacity-60">
@@ -78,6 +81,7 @@ export default function VisualInterlude() {
                         src="/images/evidence-gathering.jpg"
                         alt="The Gathering"
                         fill
+                        sizes="(max-width: 768px) 50vw, 20vw"
                         className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                     />
                     <span className="absolute bottom-2 left-2 font-mono text-[8px] uppercase tracking-widest text-paper mix-blend-difference opacity-60">
@@ -91,6 +95,7 @@ export default function VisualInterlude() {
                         src="/images/evidence-birds.jpg"
                         alt="Nature Art"
                         fill
+                        sizes="(max-width: 768px) 50vw, 20vw"
                         className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                     />
                     <span className="absolute bottom-2 left-2 font-mono text-[8px] uppercase tracking-widest text-paper mix-blend-difference opacity-60">
